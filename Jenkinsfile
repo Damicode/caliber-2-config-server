@@ -59,7 +59,7 @@ stage('Build the image'){
         steps{
             script{
 
-                dockerImage = docker.Build 
+                docker --version
             }
         }
 }
