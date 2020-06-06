@@ -41,7 +41,7 @@ echo "M2_HOME = ${M2_HOME}"
 stage('install'){
         steps{
             dir("/opt/maven/apache-maven-3.6.3/bin"){
-            sh 'sudo mvn clean verify'
+            sh 'mvn clean'
             }
         }
 }
