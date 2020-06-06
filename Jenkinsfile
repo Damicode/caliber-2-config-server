@@ -40,7 +40,7 @@ echo "M2_HOME = ${M2_HOME}"
 }
 stage('install'){
         steps{
-            sh 'mvn -f  install'
+            sh 'mvn -f pom.xml install'
         }
 }
 
