@@ -68,13 +68,23 @@ stage ('Deploy image to DockerHub'){
 
         steps{
           withCredentials([usernamePassword(credentialsId: 'Mydocker20', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
- 
-  docker.withRegistry('', RegisterCrudential)
+      echo ''' ${USERNAME}
+              "pasword ${PASSWORD}"
+              "testing" '''
+              
+              docker.withRegistry('', 'Mydocker20')
+              
               {
                   sh "docker login -u ${USERNAME} -p ${PASSWORD}"
                   dockerImage.push()
               }
-}
+              
+              echo ''' ${USERNAME}
+              "pasword ${PASSWORD}"
+              "testing" '''
+
+        }
+            
         }
 
 }
