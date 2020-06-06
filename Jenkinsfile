@@ -36,7 +36,7 @@ echo "M2_HOME = ${M2_HOME}"
 }
 }
 stage('Clean'){
-    def  MAVEN_HOME = "tool name: 'mvn', type: 'maven'"
+    def  MAVEN_HOME = tool name: 'mvn', type: 'maven'
         steps{
             sh "${MAVEN_HOME}/bin/mvn build"
         }
