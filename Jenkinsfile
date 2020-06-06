@@ -40,8 +40,8 @@ echo "M2_HOME = ${M2_HOME}"
 }
 stage('install'){
         steps{
-            dir("/usr/share/maven"){
-            sh 'sudo mvn package'
+            dir("/opt/maven/apache-maven-3.6.3"){
+            sh 'sudo mvn clean verify'
             }
         }
 }
