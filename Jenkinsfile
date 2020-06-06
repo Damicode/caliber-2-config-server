@@ -8,7 +8,7 @@ environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
-    mavenHome="/opt/maven/apache-maven-3.6.3/bin:$PATH"
+    PATH="/opt/maven/apache-maven-3.6.3/bin:$PATH"
  
 }
  tools{
