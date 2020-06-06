@@ -22,7 +22,7 @@ stage ('Clonning from git'){
 
 stage('Compile'){
         steps{
-            sh 'mvn  compile'
+            sh 'npm  compile'
         }
 }
 
