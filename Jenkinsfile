@@ -37,7 +37,7 @@ echo "M2_HOME = ${M2_HOME}"
 }
 stage('Clean'){
         steps{
-            sh "${PATH}/bin/mvn clean"
+            sh "${PATH}/mvn build"
         }
 }
 
