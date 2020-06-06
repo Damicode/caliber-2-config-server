@@ -8,7 +8,7 @@ environment{
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
 }
-
+tools {nodejs "node" }
 stages{
 
 stage ('Clonning from git'){
@@ -20,9 +20,9 @@ stage ('Clonning from git'){
 
 }
 
-stage('Compile'){
+stage('install'){
         steps{
-            sh 'npm  compile'
+            sh 'npm install'
         }
 }
 
