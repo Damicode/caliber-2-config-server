@@ -8,7 +8,7 @@ environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
-    MAVEN_HOME="/var/lib/jenkins/workspace/damier"
+   
  
 }
  tools{
@@ -42,7 +42,7 @@ echo "M2_HOME = ${M2_HOME}"
 stage('install'){
         steps{
             
-            sh "${MAVEN_HOME}/mvn clean package"
+            sh "mvn clean package"
         }
 }
 
