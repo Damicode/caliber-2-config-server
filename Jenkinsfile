@@ -53,10 +53,10 @@ stage('Test'){
         }
 }
     
-    stage('Building '){
+    stage('Compile'){
         steps{
             
-            sh 'mvn build'
+            sh 'mvn compile'
         }
 }
 
