@@ -2,7 +2,7 @@
 
 pipeline{
 
-agent any&lt;/code&gt;
+agent any
 
 environment{
     dockerRegister ="damier85/damier-raymond"
