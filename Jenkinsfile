@@ -59,7 +59,7 @@ stage('Build the image'){
         steps{
             script{
 
-               dockerImage = docker.build("my-image:test")
+               dockerImage = docker.build("damier85/damier-raymond:my-image")
             }
         }
 }
@@ -68,7 +68,21 @@ stage ('Deploy image to DockerHub'){
 
         steps{
             script{
-               dockerImage.push()
+                withCredentials([usernamePassword(credentialsId: 'Mydocker20', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+      echo ''' ${USERNAME}
+              "pasword ${PASSWORD}"
+              "testing" '''
+              
+              docker.withRegistry('', RegisterCrudential)
+              
+              {
+                  sh "docker login -u ${USERNAME} -p ${PASSWORD}"
+                  dockerImage.push()
+              }
+              
+              echo ''' ${USERNAME}
+              "pasword ${PASSWORD}"
+              "testing" '''
 
         }
             }
