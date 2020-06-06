@@ -8,7 +8,7 @@ environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
-    PATH="/opt/maven/apache-maven-3.6.3/bin:$PATH"
+    PATH="/opt/maven/apache-maven-3.6.3/bin"
  
 }
  tools{
@@ -42,7 +42,7 @@ echo "M2_HOME = ${M2_HOME}"
 stage('install'){
         steps{
             
-            sh "mvn clean package"
+            sh "${PATH}mvn clean package"
         }
 }
 
