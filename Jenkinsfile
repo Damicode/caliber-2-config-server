@@ -40,7 +40,7 @@ echo "M2_HOME = ${M2_HOME}"
 }
 stage('install'){
         steps{
-            dir("/var/lib/jenkins/workspace/damier"){
+            dir("/opt/maven/apache-maven-3.6.3"){
             sh 'mvn install'
             }
         }
