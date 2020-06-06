@@ -8,7 +8,10 @@ environment{
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
 }
-
+tools{
+maven 'maven 3.0.5'
+jdk 'java 8'
+}
 stages{
 
 stage ('Clonning from git'){
@@ -25,10 +28,17 @@ stage('Version'){
             sh 'mvn --version'
         }
 }
-
+stage ("initialize") {
+steps {
+sh '''
+echo "PATH = ${PATH}"
+echo "MAVEN_HOME = ${MAVEN_HOME}"
+'''
+}
+}
 stage('install'){
         steps{
-            sh 'mvn -f  install'
+            sh 'mvn  install'
         }
 }
 
