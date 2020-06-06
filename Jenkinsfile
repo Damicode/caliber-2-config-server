@@ -8,7 +8,7 @@ environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
-    
+     MAVEN_HOME = "tool name: 'mvn', type: 'maven'bin"
 }
 
 stages{
@@ -36,7 +36,7 @@ echo "M2_HOME = ${M2_HOME}"
 }
 }
 stage('Clean'){
-   def  MAVEN_HOME = "tool name: 'mvn', type: 'maven'bin"
+    
         steps{
             sh "${MAVEN_HOME}/mvn build"
         }
