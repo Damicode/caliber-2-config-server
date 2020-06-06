@@ -94,7 +94,7 @@ stage ('Deploy image to DockerHub'){
 stage ("Remove unUsed docker image"){
     steps{
 
-        sh "docker rmi $Register"
+        sh "docker rmi ${Register}:my-image"
     }
 }
 
