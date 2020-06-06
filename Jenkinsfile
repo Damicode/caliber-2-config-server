@@ -5,8 +5,8 @@ pipeline{
 agent any
 
 environment{
-    dockerRegister ="damier85/damier-raymond"
-    dockerRegisterCrudendtial ="Mydocker20"
+    Register ="damier85/damier-raymond"
+    RegisterCrudendtial ="Mydocker20"
     dockerImage =""
    
  
@@ -59,7 +59,7 @@ stage('Build the image'){
         steps{
             script{
 
-                dockerImage = docker.Build dockerRegister + ":$BUILD_NUMBER"
+                dockerImage = docker.Build Register + ":$BUILD_NUMBER"
             }
         }
 }
@@ -69,7 +69,7 @@ stage ('Deploy image to DockerHub'){
         steps{
             script{
 
-                docker.withResgistry('' , dockerRegisterCrudendtial)
+                docker.withResgistry('' , RegisterCrudendtial)
                 dockerImage.push()
             }
         }
@@ -79,7 +79,7 @@ stage ('Deploy image to DockerHub'){
 stage ("Remove unUsed docker image"){
     steps{
 
-        sh "docker rmi $dockerRegistry:$BUILD_NUMBER"
+        sh "docker rmi $Registry:$BUILD_NUMBER"
     }
 }
 
