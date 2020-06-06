@@ -72,7 +72,7 @@ stage ('Deploy image to DockerHub'){
               "pasword ${PASSWORD}"
               "testing" '''
               
-              docker.withRegistry('', 'Mydocker20')
+              docker.withRegistry('', RegisterCrudential)
               
               {
                   sh "docker login -u ${USERNAME} -p ${PASSWORD}"
