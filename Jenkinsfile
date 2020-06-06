@@ -42,7 +42,7 @@ echo "M2_HOME = ${M2_HOME}"
 stage('install'){
         steps{
             
-            sh "${MAVEN_HOME}/mvn clean package"
+            sh "mvn clean package"
         }
 }
 
