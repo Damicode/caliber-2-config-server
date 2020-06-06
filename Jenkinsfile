@@ -59,7 +59,7 @@ stage('Build the image'){
         steps{
             script{
 
-                docker --version
+                docker.build("my-image:test")
             }
         }
 }
