@@ -35,9 +35,9 @@ echo "M2_HOME = ${M2_HOME}"
 '''
 }
 }
-stage('install'){
+stage('Clean'){
         steps{
-            sh 'mvn  install package'
+            sh 'mvn  clean package'
         }
 }
 
