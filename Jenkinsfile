@@ -8,7 +8,7 @@ environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
-    PATH = "/usr/share/maven/bin:$PATH"
+    PATH = "/usr/share/maven:$PATH"
 }
 
 stages{
