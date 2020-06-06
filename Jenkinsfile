@@ -11,7 +11,7 @@ environment{
     
 }
 
-stages{
+
 
 stage ('Clonning from git'){
 
@@ -80,7 +80,7 @@ stage ("Remove unUsed docker image"){
 
 
 
-}
+
 
 
 }
