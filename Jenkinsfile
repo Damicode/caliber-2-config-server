@@ -9,10 +9,10 @@ environment{
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
 }
-// tools{
+ tools{
 // maven 'maven 3'
 // // jdk 'java 1.8.0_252'
-// }
+ }
 stages{
 
 stage ('Clonning from git'){
