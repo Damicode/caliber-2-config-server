@@ -6,9 +6,9 @@ node{
 
 stage ('Clonning from git'){
 
-    steps{
+   
         git 'https://github.com/Damicode/caliber-2-config-server.git'
-    }
+ 
     
 
 }
