@@ -28,7 +28,11 @@ echo "M2_HOME = ${M2_HOME}"
 }
 
 
-
+stage('install'){
+       
+            sh 'mvn  install'
+        
+}
 
 
 
