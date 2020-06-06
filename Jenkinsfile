@@ -69,7 +69,7 @@ stage ('Deploy image to DockerHub'){
         steps{
             script{
 
-                docker.withRegistry(Register , RegisterCrudential)
+                docker.withRegistry('' , RegisterCrudential)
                 dockerImage.push()
             }
         }
