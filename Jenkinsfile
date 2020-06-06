@@ -2,7 +2,7 @@
 
 node{
 
-
+ def MAVEN_HOME = tool name: 'maven-3', type: 'maven'
 
 stage ('Clonning from git'){
 
@@ -23,13 +23,14 @@ stage ("initialize") {
 sh '''
 echo "PATH = ${PATH}"
 echo "M2_HOME = ${M2_HOME}"
+echo "MAVEN_HOME"
 '''
 
 }
 
 
 stage('install'){
-   def MAVEN_HOME = tool name: 'maven-3', type: 'maven'   
+     
    sh "mvn package"
         
 }
