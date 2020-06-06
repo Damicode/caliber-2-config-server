@@ -40,12 +40,15 @@ echo "M2_HOME = ${M2_HOME}"
 }
 stage('install'){
         steps{
+            dir("/var/lib/jenkins/workspace/damier"){
             sh 'mvn install'
+            }
         }
 }
 
 stage('Test'){
         steps{
+            
             sh 'mvn test'
         }
 }
