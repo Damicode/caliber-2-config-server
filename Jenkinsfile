@@ -6,7 +6,7 @@ agent any
 
 environment{
     Register ="damier85/damier-raymond"
-    RegisterCrudendtial ="Mydocker20"
+    RegisterCrudential ="Mydocker20"
     dockerImage =""
    
  
@@ -69,7 +69,7 @@ stage ('Deploy image to DockerHub'){
         steps{
             script{
 
-                docker.withRegistry(Registry , RegisterCrudendtial)
+                docker.withRegistry(Register , RegisterCrudential)
                 dockerImage.push()
             }
         }
