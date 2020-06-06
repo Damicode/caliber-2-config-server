@@ -5,7 +5,7 @@ pipeline{
 agent any
 
 environment{
-    Register ="https://hub.docker.com/repository/docker/damier85/damier-raymond"
+    Register ="damier85/damier-raymond"
     RegisterCrudential ="Mydocker20"
     dockerImage =""
    
