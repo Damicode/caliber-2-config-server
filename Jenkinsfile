@@ -28,7 +28,7 @@ stage('Version'){
 
 stage('install'){
         steps{
-            sh 'mvn -f ~/pom.xml install'
+            sh 'mvn -f  install'
         }
 }
 
