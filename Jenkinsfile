@@ -1,14 +1,14 @@
 
 
-pipeline{
+node{
 
-agent any
+
 
 environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
-     MAVEN_HOME = "tool name: 'mvn', type: 'maven'"
+    
 }
 
 stages{
@@ -36,7 +36,7 @@ echo "M2_HOME = ${M2_HOME}"
 }
 }
 stage('Clean'){
-    
+    def  MAVEN_HOME = "tool name: 'mvn', type: 'maven'"
         steps{
             sh "${MAVEN_HOME}/bin/mvn build"
         }
