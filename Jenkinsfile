@@ -14,17 +14,17 @@ stage ('Clonning from git'){
 }
 
 stage('Version'){
-        steps{
+      
             sh 'mvn --version'
-        }
+        
 }
 stage ("initialize") {
-steps {
+
 sh '''
 echo "PATH = ${PATH}"
 echo "M2_HOME = ${M2_HOME}"
 '''
-}
+
 }
 
 
