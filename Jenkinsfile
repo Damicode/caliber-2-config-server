@@ -41,7 +41,7 @@ echo "M2_HOME = ${M2_HOME}"
 stage('install'){
         steps{
             dir("/usr/share/maven"){
-            sh 'mvn package'
+            sh 'sudo mvn package'
             }
         }
 }
