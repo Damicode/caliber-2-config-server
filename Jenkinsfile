@@ -22,7 +22,7 @@ stage ('Clonning from git'){
 
 stage('Build & install'){
         steps{
-            sh 'npm install'
+            sh 'mvn install'
         }
 }
 
