@@ -41,7 +41,7 @@ echo "M2_HOME = ${M2_HOME}"
 }
 stage('install'){
         steps{
-            echo " this is the path: ${PATH}"
+            
             sh "mvn clean package"
         }
 }
