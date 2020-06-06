@@ -2,7 +2,8 @@
 
 pipeline{
 
-agent any
+agent any&lt;/code&gt;
+
 environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
