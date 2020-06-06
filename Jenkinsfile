@@ -33,42 +33,6 @@ stage('Clean'){
         }
 }
 
-stage('Test'){
-        steps{
-            sh "mvn package"
-        }
-}
-
-
-stage('Build the image'){
-
-        steps{
-            script{
-
-                dockerImage = docker.Build dockerRegister + ":$BUILD_NUMBER"
-            }
-        }
-}
-
-stage ('Deploy image to DockerHub'){
-
-        steps{
-            script{
-
-                docker.withResgistry('' , dockerRegisterCrudendtial)
-                dockerImage.push()
-            }
-        }
-
-}
-
-stage ("Remove unUsed docker image"){
-    steps{
-
-        sh "docker rmi $dockerRegistry:$BUILD_NUMBER"
-    }
-}
-
 
 
 
