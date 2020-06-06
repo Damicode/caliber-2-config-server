@@ -3,7 +3,7 @@
 pipeline{
 
 agent any
-enrironement{
+environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
