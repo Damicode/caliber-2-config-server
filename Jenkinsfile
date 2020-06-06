@@ -52,6 +52,13 @@ stage('Test'){
             sh 'mvn test'
         }
 }
+    
+    stage('Building '){
+        steps{
+            
+            sh 'mvn build'
+        }
+}
 
 
 stage('Build the image'){
