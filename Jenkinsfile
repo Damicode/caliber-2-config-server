@@ -44,7 +44,7 @@ stage('Clean'){
 
 stage('Test'){
         steps{
-            sh 'mvn test'
+            sh "${MAVEN_HOME}/bin/mvn package"
         }
 }
 
