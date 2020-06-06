@@ -8,7 +8,7 @@ environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
-    PATH = "/opt/maven/apache-maven-3.6.3/.local/bin:$PATH"
+    PATH = "tool name: 'mvn', type: 'maven'bin"
 }
 
 stages{
@@ -37,7 +37,7 @@ echo "M2_HOME = ${M2_HOME}"
 }
 stage('Clean'){
         steps{
-            sh 'mvn  clean package'
+            sh "${PATH}/bin/mvn clean"
         }
 }
 
