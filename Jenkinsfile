@@ -8,7 +8,7 @@ environment{
     dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
-     MAVEN_HOME = "tool name: 'mvn', type: 'maven"
+     MAVEN_HOME = "tool name: 'mvn', type: 'maven'"
 }
 
 stages{
