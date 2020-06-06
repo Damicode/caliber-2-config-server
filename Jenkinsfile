@@ -67,7 +67,8 @@ stage('Build the image'){
 stage ('Deploy image to DockerHub'){
 
         steps{
-          withCredentials([usernamePassword(credentialsId: 'Mydocker20', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+            script{
+                 withCredentials([usernamePassword(credentialsId: 'Mydocker20', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
       echo ''' ${USERNAME}
               "pasword ${PASSWORD}"
               "testing" '''
@@ -84,6 +85,7 @@ stage ('Deploy image to DockerHub'){
               "testing" '''
 
         }
+            }
             
         }
 
