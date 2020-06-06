@@ -4,23 +4,25 @@ pipeline{
 
 agent any
 enrironement{
-    dockerRegister ="damier85"
+    dockerRegister ="damier85/damier-raymond"
     dockerRegisterCrudendtial ="Mydocker20"
     dockerImage =""
 }
 
+stages{
+
 stage ('Clonning from git'){
 
     steps{
-        git "https://github.com/Damicode/caliber-2-config-server.git"
+        git 'https://github.com/Damicode/caliber-2-config-server.git'
     }
     
 
 }
 
-stage('clean'){
+stage('Compile'){
         steps{
-            sh 'mvn clean compile'
+            sh 'mvn  compile'
         }
 }
 
@@ -68,7 +70,7 @@ stage ("Remove unUsed docker image"){
 
 
 
-
+}
 
 
 }
