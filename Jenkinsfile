@@ -22,15 +22,15 @@ stage ('Clonning from git'){
 
 stage('Build & install'){
         steps{
-            sh 'mvn install'
+            sh 'mvn --version'
         }
 }
 
-stage('install'){
-        steps{
-            sh 'mvn install'
-        }
-}
+// stage('install'){
+//         steps{
+//             sh 'mvn install'
+//         }
+// }
 
 stage('Test'){
         steps{
