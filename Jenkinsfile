@@ -12,7 +12,7 @@ environment{
 }
  tools{
  maven 'maven-3'
-// // jdk 'java 1.8.0_252'
+ jdk 'java 1.8.0_252'
  }
 stages{
 
