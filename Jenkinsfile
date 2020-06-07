@@ -66,7 +66,7 @@ stage('Build the image'){
         steps{
             script{
 
-               dockerImage = docker.build("damier85/damier-raymond:my-image")
+                dockerImage = docker.build("${Register}:my-image")
             }
         }
 }
