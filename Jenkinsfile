@@ -21,7 +21,7 @@ stages{
 
         steps
         {
-            cho "Something"
+            echo "Something"
         }
 
 
