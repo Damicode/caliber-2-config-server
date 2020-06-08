@@ -44,7 +44,7 @@ stages{
         }
 
     
-        stage('Compile'){
+        stage('Compile the App'){
         steps
            {
             
@@ -53,14 +53,8 @@ stages{
         }
 
 
-stage('Test'){
-        steps
-        {
-            sh 'mvn test'
-        }
-    }
-    
-stage('install'){
+
+stage('package the App'){
         steps
         {
             sh "mvn clean package"
