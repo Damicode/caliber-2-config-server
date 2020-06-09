@@ -112,7 +112,7 @@ stage ('Deploy image to DockerHub'){
         {
                 script{
                   
-                    docker.withRegistry('https://367484709954.dkr.ecr.us-east-2.amazonaws.com', "${REGION}:${ID}")
+                    docker.withRegistry('367484709954.dkr.ecr.us-east-2.amazonaws.com', "${REGION}:${ID}")
                     {
                      dockerImage.push()
                     }
