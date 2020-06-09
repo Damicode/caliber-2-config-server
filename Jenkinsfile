@@ -8,6 +8,9 @@ agent any
         Register ="damier85/damier-raymond"
         RegisterCrudential ="Mydocker20"
         dockerImage =""
+        forTheAWSecr="https://367484709954.dkr.ecr.us-east-2.amazonaws.com/caliber-batch"
+        Region ="ecr:us-east-2"
+        ID="RevatureECR"
 
 
     }
@@ -77,9 +80,24 @@ stage ('Deploy image to DockerHub'){
         steps
         {
                 script{
-                  docker.withRegistry('', RegisterCrudential)
+                    docker.withRegistry('https://367484709954.dkr.ecr.us-east-2.amazonaws.com', "${REGION}:${ID}")
                     {
                      dockerImage.push()
+                    }
+                }
+            
+        }
+
+}
+    
+    stage ('Deploy image to AWS Ecr'){
+
+        steps
+        {
+                script{
+                  docker.withRegistry('', RegisterCrudential)
+                    {
+                     dockerImage.push("damier-test")
                     }
                 }
             
