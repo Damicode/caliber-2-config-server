@@ -95,7 +95,17 @@ stage ('Deploy image to DockerHub'){
 }
     
  
-    
+   stage('AWS Building Bloc'){
+
+        steps
+        {
+            script
+            {
+                dockerImage = docker.build("${forTheAWSecr}:my-image")
+            }
+        }
+}
+ 
     stage ('Deploy image to AWS Ecr'){
 
         steps
