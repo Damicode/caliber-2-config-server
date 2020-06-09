@@ -101,7 +101,7 @@ stage ('Deploy image to DockerHub'){
         {
             script
             {
-                dockerImage = docker.build("caliber-batch")
+                dockerImage = docker.build("sol")
             }
         }
 }
@@ -114,7 +114,7 @@ stage ('Deploy image to DockerHub'){
                   
                     docker.withRegistry('https://367484709954.dkr.ecr.us-east-2.amazonaws.com', "${REGION}:${ID}")
                     {
-                        sh 'docker push 367484709954.dkr.ecr.us-east-2.amazonaws.com/caliber-batch:damier-image'
+                         docker.image("caliber-batch").push("damier-image")
                    
                     }
                 }
