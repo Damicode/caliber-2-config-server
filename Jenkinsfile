@@ -99,6 +99,8 @@ stage ('Deploy image to DockerHub'){
         steps
         {
                 script{
+                    sh 'rm  ~/.dockercfg || true'
+        sh 'rm ~/.docker/config.json || true'
                     docker.withRegistry('https://367484709954.dkr.ecr.us-east-2.amazonaws.com', "${REGION}:${ID}")
                     {
                      dockerImage.push()
