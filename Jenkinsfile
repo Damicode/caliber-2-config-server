@@ -94,7 +94,7 @@ stage ('Deploy image to DockerHub'){
 
 }
     
-    stage('Build the image for Docker'){
+    stage('AWS building bloc'){
 
         steps
         {
