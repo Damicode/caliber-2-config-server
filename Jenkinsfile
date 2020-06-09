@@ -8,7 +8,7 @@ agent any
         Register ="damier85/damier-raymond"
         RegisterCrudential ="Mydocker20"
         dockerImage =""
-        forTheAWSecr="https://367484709954.dkr.ecr.us-east-2.amazonaws.com/caliber-batch"
+        forTheAWSecr="367484709954.dkr.ecr.us-east-2.amazonaws.com/caliber-batch"
         Region ="ecr:us-east-2"
         ID="damierTestEcr"
 
@@ -101,7 +101,7 @@ stage ('Deploy image to DockerHub'){
         {
             script
             {
-                dockerImage = docker.build("367484709954.dkr.ecr.us-east-2.amazonaws.com/caliber-batch/caliber-batch")
+                dockerImage = docker.build("${forTheAWSecr}")
             }
         }
 }
