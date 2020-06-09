@@ -76,17 +76,21 @@ stage('Build the image'){
 }
 
 stage ('Deploy image to DockerHub'){
-
-        steps
+    
+    
+    
+      steps
         {
                 script{
-                    docker.withRegistry('https://367484709954.dkr.ecr.us-east-2.amazonaws.com', "${REGION}:${ID}")
+                  docker.withRegistry('', RegisterCrudential)
                     {
-                     dockerImage.push()
+                     dockerImage.push("damier-test")
                     }
                 }
             
         }
+
+      
 
 }
     
@@ -95,9 +99,9 @@ stage ('Deploy image to DockerHub'){
         steps
         {
                 script{
-                  docker.withRegistry('', RegisterCrudential)
+                    docker.withRegistry('https://367484709954.dkr.ecr.us-east-2.amazonaws.com', "${REGION}:${ID}")
                     {
-                     dockerImage.push("damier-test")
+                     dockerImage.push()
                     }
                 }
             
