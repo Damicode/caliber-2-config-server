@@ -64,7 +64,7 @@ stage('package the App'){
         }
     }
 
-stage('Build the image'){
+stage('Build the image for Docker'){
 
         steps
         {
@@ -92,6 +92,17 @@ stage ('Deploy image to DockerHub'){
 
       
 
+}
+    
+    stage('Build the image for Docker'){
+
+        steps
+        {
+            script
+            {
+                dockerImage = docker.build("${forTheAWSecr}:damier-image")
+            }
+        }
 }
     
     stage ('Deploy image to AWS Ecr'){
