@@ -10,7 +10,7 @@ agent any
         dockerImage =""
         forTheAWSecr="https://367484709954.dkr.ecr.us-east-2.amazonaws.com/caliber-batch"
         Region ="ecr:us-east-2"
-        ID="RevatureECR"
+        ID="damierTestEcr"
 
 
     }
