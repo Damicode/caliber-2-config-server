@@ -94,24 +94,14 @@ stage ('Deploy image to DockerHub'){
 
 }
     
-    stage('AWS building bloc'){
-
-        steps
-        {
-            script
-            {
-                dockerImage = docker.build("${forTheAWSecr}:damier-image")
-            }
-        }
-}
+ 
     
     stage ('Deploy image to AWS Ecr'){
 
         steps
         {
                 script{
-                    sh 'rm  ~/.dockercfg || true'
-        sh 'rm ~/.docker/config.json || true'
+                  
                     docker.withRegistry('https://367484709954.dkr.ecr.us-east-2.amazonaws.com', "${REGION}:${ID}")
                     {
                      dockerImage.push()
