@@ -101,7 +101,7 @@ stage ('Deploy image to DockerHub'){
         {
             script
             {
-                dockerImage = docker.build("${forTheAWSecr}:my-image")
+                dockerImage = docker.build("caliber-batch")
             }
         }
 }
