@@ -72,8 +72,8 @@ stage('analysis'){
 steps{
 withSonarQubeEnv("sonaranalysis")
     {
+sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar -Dsonar.host.url=https://sonarcloud.io'
 
-sh 'mvn sonar:sonar'
     }
 }
 }
