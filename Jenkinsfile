@@ -12,7 +12,7 @@ agent any
         Region ="ecr:us-east-2"
         ID="damierTestEcr"
         sonar ="sonaranalysis"
-        test ='tool name: 'maven-3', type: 'maven'
+        test = tool name: 'maven-3', type: 'maven'
 
 
     }
