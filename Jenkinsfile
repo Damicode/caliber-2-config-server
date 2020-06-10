@@ -68,7 +68,7 @@ stage('package the App'){
     
     
 
-stage{
+stage('analysis'){
 steps{
 withSonarQubeEnv(${sonar})
     {
