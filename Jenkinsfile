@@ -71,7 +71,7 @@ stage('package the App'){
 
 stage('analysis'){
 steps{
-withSonarQubeEnv("sonaranalysis")
+withSonarQubeEnv('sonaranalysis')
     {
         
         sh "${test}/bin/mvn sonar:sonar"
