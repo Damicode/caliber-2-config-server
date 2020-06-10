@@ -11,6 +11,7 @@ agent any
         forTheAWSecr="367484709954.dkr.ecr.us-east-2.amazonaws.com/caliber-batch"
         Region ="ecr:us-east-2"
         ID="damierTestEcr"
+        sonar ="sonaranalysis"
 
 
     }
@@ -62,7 +63,18 @@ stage('package the App'){
         {
             sh "mvn clean package"
         }
-    }
+    }  
+
+    
+    
+
+stage{
+steps{
+withSonarQubeEnv(${sonar}){
+
+sh 'mvn sonar:sonar'
+}
+}
 
 stage('Build the image for Docker'){
 
