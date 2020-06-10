@@ -70,9 +70,11 @@ stage('package the App'){
 
 stage{
 steps{
-withSonarQubeEnv(${sonar}){
+withSonarQubeEnv(${sonar})
+    {
 
 sh 'mvn sonar:sonar'
+    }
 }
 }
 
