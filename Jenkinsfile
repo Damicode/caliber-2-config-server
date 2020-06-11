@@ -69,17 +69,7 @@ stage('package the App'){
     
     
 
-stage('analysis'){
-steps{
-withSonarQubeEnv('sonaranalysis')
-    {
-        
-        sh "${test}/bin/mvn sonar:sonar"
-        sh 'cat target/sonar/report-task.txt'
 
-    }
-}
-}
 
 stage('Build the image for Docker'){
 
@@ -93,9 +83,7 @@ stage('Build the image for Docker'){
 }
 
 stage ('Deploy image to DockerHub'){
-    
-    
-    
+      
       steps
         {
                 script{
@@ -107,7 +95,7 @@ stage ('Deploy image to DockerHub'){
             
         }
 
-      
+    
 
 }
     
@@ -147,8 +135,6 @@ stage ('Deploy image to DockerHub'){
             sh "docker rmi ${Register}:my-image"
         }
     }
-
-
 
 }
 
